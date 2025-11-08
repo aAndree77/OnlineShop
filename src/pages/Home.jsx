@@ -7,6 +7,7 @@ import parteneriate from "../assets/cooperation.png"
 import sales from "../assets/money.png"
 import customers from "../assets/happy.png"
 import store from "../assets/store.png"
+import {Link} from "react-router-dom"
 
 export default function Home() {
   const { theme } = useContext(ThemeContext);
@@ -113,14 +114,13 @@ export default function Home() {
         <h2 className="text-4xl font-extrabold mb-6">
           Ready to Start Shopping?
         </h2>
-        <a
-          href="/shop"
+        <Link to="/shop"
           className={theme === "dark"
             ? "inline-block px-10 py-4 font-bold rounded-full shadow-xl bg-gradient-to-r from-orange-500 via-orange-400 to-yellow-200 text-gray-100 hover:shadow-2xl hover:translate-y-[-2px] transition-all duration-300 text-lg"
             : "inline-block px-10 py-4 font-bold rounded-full shadow-xl bg-gradient-to-r from-pink-500 to-blue-600 text-white hover:shadow-2xl hover:translate-y-[-2px] transition-all duration-300 text-lg"}
         >
           Go to Shop
-        </a>
+        </Link>
       </div>
 
       <div className={theme === "dark"
