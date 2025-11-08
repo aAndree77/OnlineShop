@@ -66,7 +66,7 @@ export default function About() {
         </button>
       </div>
       {sub &&
-      <div className={theme === "dark" ? " p-6 top-5 right-5 w-100 h-50 fixed rounded-lg bg-gradient-to-r mt-20 from-orange-500 via-orange-400 to-yellow-200" : "text-white mt-20 top-5 right-5 w-100 h-50 fixed rounded-lg bg-gradient-to-r from-pink-500 to-blue-600"}>
+      <div className={theme === "dark" ? " p-6 top-5 right-5 w-100 h-50 fixed rounded-lg bg-gradient-to-r mt-20 from-orange-500 via-orange-400 to-yellow-200" : "text-white p-6 mt-20 top-5 right-5 w-100 h-50 fixed rounded-lg bg-gradient-to-r from-pink-500 to-blue-600"}>
         <CloseIcon onClick={()=>setSub(false)} fontSize="large" className="absolute right-6 p-1 cursor-pointer hover:text-red-300 active:text-red-500 active:scale-80"/>
         <div className="flex flex-col gap-3">
           <h1 className="text-2xl font-bold">🎉Congrats!</h1>
