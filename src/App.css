@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+html, body {
+  background-color: var(--primary-color);
+  overflow-x: hidden;
+}
+:root {
+  /* Base */
+  --input-color:rgb(161, 161, 161);
+  --primary-color: #fdfdfd;        /* very clean white */
+  --secondary-color: #f3f4f6;      /* soft light gray instead of gold */
+  --background-color: #f7f4f4;     /* light cream background */
+  --text-color: #1e1e20;           /* almost black */
+  --button: #1f2937;               /* dark gray button accent */
+  --text-muted: #6b7280;           /* muted gray text */
+
+  /* Borders */
+  --border-color: #e2e8f0;         
+  --border-hover: #94a3b8;         
+  --border-focus: #374151;         
+
+  /* Hover / Active / Focus */
+  --hover-bg: #f1f5f9;             
+  --active-bg: #e2e8f0;            
+  --focus-ring: #3b82f6;          
+
+  /* Navbar */
+  --navbar-bg: #ffffff;            
+  --navbar-text: #1c54ad;          
+  --navbar-hover: #111827;         /* dark hover instead of blue */
+
+  /* Card */
+  --card-bg: #ffffff;              
+  --card-border: #e2e8f0;          
+  --card-shadow: rgba(0,0,0,0.08); 
+
+  /* Button */
+  --button-bg: #1463d1;            
+  --button-text: #ffffff;          
+  --button-hover: #1b4cb8;         
+  --button-active: #213e9b;        
+  --button-disabled: #cbd5e1;      
+}
+
+[data-theme="dark"] {
+  /* Base */
+  --input-color:rgb(161, 161, 161);
+  --primary-color: #111111;        /* almost black background */
+  --secondary-color: #fdfdfd;      /* white highlights instead of orange */
+  --background-color: #1e1e1e;     
+  --text-color: #f3f4f6;           
+  --button: #374151;               /* dark gray button */
+  --text-muted: #9ca3af;           
+
+  /* Borders */
+  --border-color: #374151;         
+  --border-hover: #4b5563;         
+  --border-focus: #6b7280;         
+
+  --hover-bg: #1f2937;             
+  --active-bg: #2d2d2d;            
+  --focus-ring: #9ca3af;    
+         
+  --navbar-bg: #111111;            
+  --navbar-text: #ffe02e;          
+  --navbar-hover: #bdbdbd;         /* white hover instead of orange */
+  
+  /* Card */
+  --card-bg: #1f1f1f;              
+  --card-border: #000000;          
+  --card-shadow: rgba(0,0,0,0.4);  
+
+  /* Button */
+  --button-bg: #3180ff;            
+  --button-text: #000000;          
+  --button-hover: #61a3ff;         
+  --button-active: hsl(215, 100%, 89%);        
+  --button-disabled: #6b7280;      
+}
+
+
+.pulse {
+  animation: pulse infinite ease 1s;
+}
+
+.scrollbardark::-webkit-scrollbar{
+  width: 10px;
+  background: linear-gradient(to bottom, #f97316, #fb923c, #fef08a);
+  appearance: none;
+
+}
+.scrollbardark::-webkit-scrollbar-track{
+  background-color: #111111;
+
+}
+
+.scrollbardark::-webkit-scrollbar-thumb{
+  
+  border-radius: 50px;
+  background: linear-gradient(to bottom, #f97316, #fb923c, #fef08a)
+}
+
+
+.scrollbarlight::-webkit-scrollbar{
+  width: 10px;
+  background: rgba(0,0,0,5);
+  appearance: none;
+
+
+}
+.scrollbarlight::-webkit-scrollbar-track{
+  background-color: #ffffff;
+  border-top-right-radius:50px ;
+  border-bottom-right-radius: 50px;
+}
+
+.scrollbarlight::-webkit-scrollbar-thumb{
+  
+  border-radius: 50px;
+  background: linear-gradient(to bottom, #ec4899, #2563eb);
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    scale: 1;
+  }
+
+  50% {
+    opacity: 0.1;
+    scale: 0.2;
+  }
+
+  100%{
+    opacity: 1;
+    scale:1;
+  }
+}
