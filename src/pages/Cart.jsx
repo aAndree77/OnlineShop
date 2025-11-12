@@ -100,8 +100,8 @@ useEffect(()=>{
                   {!loading && (
                     <div className="scrollbardark fixed top-0 left-0 flex items-center justify-center h-screen w-screen bg-[rgba(0,0,0,0.7)] z-40">
                       <div className={theme === "dark"
-                        ? "overflow-y-scroll scrollbardark text-white p-0 w-120 h-130 fixed rounded-lg bg-[var(--primary-color)]"
-                        : "overflow-y-scroll scrollbarlight text-white p-0 w-120 h-130 fixed rounded-lg bg-[var(--primary-color)]"}>
+                        ? "overflow-y-scroll scrollbardark text-white p-0 w-[90%] sm:w-[80%] md:w-[70%] lg:w-120 h-[60vh] sm:h-[65vh] md:h-[70vh] fixed rounded-lg bg-[var(--primary-color)]"
+                        : "overflow-y-scroll scrollbarlight text-white p-0 w-[90%] sm:w-[80%] md:w-[70%] lg:w-120 h-[60vh] sm:h-[65vh] md:h-[70vh] fixed rounded-lg bg-[var(--primary-color)]"}>
                         
                         <div className={theme === "dark"
                           ? "w-full sticky flex justify-center items-center top-0 rounded-t-lg h-30 bg-gradient-to-r from-orange-500 via-orange-400 to-yellow-200"
@@ -124,15 +124,15 @@ useEffect(()=>{
                           <div className="flex flex-col pt-5 gap-3">
                             <label className="font-bold text-[var(--text-color)]">Card Number</label>
                             <input className="bg-[var(--background-color)] text-[var(--input-color)] rounded-lg w-[100%] h-10 p-6" type="text" placeholder="1234 5678 9012 3456"/>
-
-                            <div className="flex justify-center">
-                              <div className="flex flex-col items-center">
+                            
+                            <div className="flex flex-col sm:flex-row justify-center gap-4">
+                              <div className="flex flex-col items-center w-full sm:w-1/2">
                                 <label className="font-bold text-[var(--text-color)]">Exp Date</label>
-                                <input className="p-6 bg-[var(--background-color)]  text-[var(--input-color)] rounded-lg h-10 w-[50%]" type="text" placeholder="MM/YY" />
+                                <input className="p-6 bg-[var(--background-color)]  text-[var(--input-color)] rounded-lg h-10 w-[80%]" type="text" placeholder="MM/YY" />
                               </div>
-                              <div className="flex flex-col items-center">
+                              <div className="flex flex-col items-center w-full sm:w-1/2">
                                 <label className="font-bold text-[var(--text-color)]">CVV</label>
-                                <input className="p-6 bg-[var(--background-color)] text-[var(--input-color)] rounded-lg h-10 w-[50%]" type="text" placeholder="123"/>
+                                <input className="p-6 bg-[var(--background-color)] text-[var(--input-color)] rounded-lg h-10 w-[80%]" type="text" placeholder="123"/>
                               </div>
                             </div>
 
@@ -146,8 +146,8 @@ useEffect(()=>{
                               <button
                                 onClick={() => setLoading(true)}
                                 className={theme === "light"
-                                  ? "mt-auto bg-gradient-to-r from-pink-500 to-blue-600 text-white rounded-xl py-2 px-10 text-lg font-bold cursor-pointer transition-transform duration-200 hover:scale-105 hover:shadow-lg active:scale-95 active:shadow-inner"
-                                  : "mt-auto bg-gradient-to-r from-orange-500 via-orange-400 to-yellow-200 text-white px-10 rounded-xl py-2 text-lg font-bold cursor-pointer transition-transform duration-200 hover:scale-105 hover:shadow-lg active:scale-95 active:shadow-inner"}>
+                                  ? "mt-auto bg-gradient-to-r from-pink-500 to-blue-600 text-white rounded-xl py-2 px-10 w-full sm:w-auto text-lg font-bold cursor-pointer transition-transform duration-200 hover:scale-105 hover:shadow-lg active:scale-95 active:shadow-inner"
+                                  : "mt-auto bg-gradient-to-r from-orange-500 via-orange-400 to-yellow-200 text-white px-10 w-full sm:w-auto rounded-xl py-2 text-lg font-bold cursor-pointer transition-transform duration-200 hover:scale-105 hover:shadow-lg active:scale-95 active:shadow-inner"}>
                                 Pay
                               </button>
                             </div>
@@ -157,25 +157,40 @@ useEffect(()=>{
                     </div>)}
                 </div>)}
                 {succes && (
-                  <div className="fixed top-0 left-0 flex items-center justify-center h-screen w-screen z-40">
-                      <div className={theme === "dark" ? " p-6 top-5 right-5 w-100 h-50 fixed rounded-lg bg-gradient-to-r mt-20 from-orange-500 via-orange-400 to-yellow-200" : "text-white mt-20 p-6 top-5 right-5 w-100 h-50 fixed rounded-lg bg-gradient-to-r from-pink-500 to-blue-600"}>
-                        <div className={theme === "dark"
-                          ? "flex flex-col gap-3 w-full sticky top-0 rounded-t-lg h-30"
-                          : "flex flex-col gap-3 w-full sticky top-0 rounded-t-lg h-30"}>
-                            <div className="flex items-center gap-2">
-                              <CheckCircleIcon className="text-emerald-400 text-shadow-md !text-3xl"/>
-                              <p className="text-3xl font-bold text-emerald-400 text-shadow-md">Succes!</p>
-                            </div>
-                          <p className="text-lg text-gray-100">Your transaction has been completed successfully!</p>
-                          <CloseIcon
-                            onClick={() => setSucces(false)}
-                            fontSize="large"
-                            className="absolute top-2 text-[var(--text-color)] right-2 p-1 cursor-pointer hover:text-red-300 active:text-red-500 active:scale-80"
-                          />
+                  <div className="fixed top-5 right-5 z-50 px-4">
+                    <div
+                      className={
+                        theme === "dark"
+                          ? "p-6 w-[90%] sm:w-[300px] md:w-[350px] lg:w-[400px] rounded-2xl bg-gradient-to-r from-orange-500 via-orange-400 to-yellow-200 shadow-xl relative animate-fade-in"
+                          : "text-white p-6 w-[90%] sm:w-[300px] md:w-[350px] lg:w-[400px] rounded-2xl bg-gradient-to-r from-pink-500 to-blue-600 shadow-xl relative animate-fade-in"
+                      }
+                    >
+                      <div
+                        className={
+                          theme === "dark"
+                            ? "flex flex-col items-start gap-3 w-full"
+                            : "flex flex-col items-start gap-3 w-full"
+                        }
+                      >
+                        <div className="flex items-center gap-2">
+                          <CheckCircleIcon className="text-emerald-400 text-shadow-md !text-3xl" />
+                          <p className="text-2xl md:text-3xl font-bold text-emerald-400 text-shadow-md">
+                            Succes!
+                          </p>
                         </div>
+
+                        <p className="text-sm md:text-base text-gray-100 leading-snug">
+                          Your transaction has been completed successfully!
+                        </p>
+
+                        <CloseIcon
+                          onClick={() => setSucces(false)}
+                          fontSize="large"
+                          className="absolute top-2 right-2 text-[var(--text-color)] p-1 cursor-pointer hover:text-red-300 active:text-red-500 active:scale-90 transition"
+                        />
                       </div>
                     </div>
-                )}
+                  </div>)}
           </div>
         </div>
         ):(<Link to={"/shop"}><div className="h-[100vh] flex justify-center text-[var(--text-color)] text-center items-center font-bold text-5xl">Nu sunt produse in cos!</div></Link>)}
