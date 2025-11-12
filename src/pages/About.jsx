@@ -65,15 +65,30 @@ export default function About() {
           Subscribe
         </button>
       </div>
-      {sub &&
-      <div className={theme === "dark" ? " p-6 top-5 right-5 w-100 h-50 fixed rounded-lg bg-gradient-to-r mt-20 from-orange-500 via-orange-400 to-yellow-200" : "text-white p-6 mt-20 top-5 right-5 w-100 h-50 fixed rounded-lg bg-gradient-to-r from-pink-500 to-blue-600"}>
-        <CloseIcon onClick={()=>setSub(false)} fontSize="large" className="absolute right-6 p-1 cursor-pointer hover:text-red-300 active:text-red-500 active:scale-80"/>
-        <div className="flex flex-col gap-3">
-          <h1 className="text-2xl font-bold">🎉Congrats!</h1>
-          <p className="text-md ">You have successfully subscribed, you will receive notifications and offers by email.</p>
-          </div>
+      {sub && (
+        <div className="fixed top-5 right-5 z-50 px-4">
+          <div
+            className={
+              theme === "dark"
+                ? "p-5 w-[90%] sm:w-[300px] md:w-[350px] lg:w-[400px] rounded-2xl bg-gradient-to-r from-orange-500 via-orange-400 to-yellow-200 shadow-xl relative animate-fade-in"
+                : "text-white p-5 w-[90%] sm:w-[300px] md:w-[350px] lg:w-[400px] rounded-2xl bg-gradient-to-r from-pink-500 to-blue-600 shadow-xl relative animate-fade-in"
+            }
+          >
+            <CloseIcon
+              onClick={() => setSub(false)}
+              fontSize="large"
+              className="absolute top-2 right-2 p-1 cursor-pointer hover:text-red-300 active:text-red-500 active:scale-90 transition"
+            />
 
-      </div>}
+            <div className="flex flex-col gap-2 text-left">
+              <h1 className="text-xl md:text-2xl font-bold">🎉 Congrats!</h1>
+              <p className="text-sm md:text-base leading-snug">
+                You have successfully subscribed! You’ll receive notifications and
+                offers by email.
+              </p>
+            </div>
+          </div>
+        </div>)}
       <div className={theme === "dark" ? "py-8 text-center bg-gradient-to-r from-orange-500 via-orange-400 to-yellow-200 text-black" : "py-8 text-center bg-gradient-to-r from-pink-500 to-blue-600 text-white"}>
         &copy; 2025 ShopEase. All rights reserved.
       </div>
